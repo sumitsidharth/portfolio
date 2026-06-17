@@ -333,7 +333,8 @@ img {
 /* --- Hero Section --- */
 .hero {
     position: relative;
-    padding: 0 5%;
+    padding: 100px 5% 0; /* Added top padding to prevent navbar overlap */
+    min-height: 100vh;
     display: flex;
     align-items: center;
 }
