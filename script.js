@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* --- 10. Contact Form Submit Mock --- */
+    /* --- 10. Contact Form Submit --- */
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
 
@@ -246,17 +246,41 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = `<i class='bx bx-loader-alt bx-spin'></i> Sending...`;
             btn.disabled = true;
 
-            // Mock async request
-            setTimeout(() => {
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            fetch("https://formsubmit.co/ajax/sumitsidharth30@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
                 btn.innerHTML = originalText;
                 btn.disabled = false;
                 contactForm.reset();
                 
                 formMessage.style.display = 'block';
+                formMessage.style.color = '#10B981';
+                formMessage.innerText = 'Message sent successfully!';
                 setTimeout(() => {
                     formMessage.style.display = 'none';
                 }, 5000);
-            }, 1500);
+            })
+            .catch(error => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                
+                formMessage.style.display = 'block';
+                formMessage.style.color = '#EF4444';
+                formMessage.innerText = 'Oops! Something went wrong.';
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            });
         });
     }
 
