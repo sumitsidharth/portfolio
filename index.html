@@ -1,336 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <!-- Metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio of a passionate Computer Science student specializing in Java, DSA, and Web Development.">
-    <title>Sumit | Developer Portfolio</title>
+    <meta name="description" content="Sumit Sidharth - Full-Stack Developer & CSE Student Portfolio">
+    <title>Sumit Sidharth | Full-Stack Developer</title>
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Boxicons for lightweight modern icons) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <!-- Icons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Background Elements -->
-    <div class="bg-shape bg-shape-1"></div>
-    <div class="bg-shape bg-shape-2"></div>
 
-    <!-- Header / Navbar -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Sumit<span>.</span></a>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-                </ul>
-                <div class="nav__close" id="nav-close">
-                    <i class='bx bx-x'></i>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <h1 class="loader-logo">SS</h1>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Sumit<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content reveal">
+            <div class="hero-text">
+                <p class="greeting">Hi, my name is</p>
+                <h1 class="name">Sumit Sidharth</h1>
+                <h2 class="roles">I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                <p class="bio">A passionate CSE student and software engineering enthusiast, dedicated to building exceptional digital experiences.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="Sumit_Sidharth_CV.pdf" class="btn btn-outline" download>Download CV</a>
                 </div>
             </div>
-
-            <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-grid-alt'></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="home section" id="home">
-            <div class="home__container container grid">
-                <div class="home__content glassmorphism">
-                    <span class="home__subtitle">Hello, I'm</span>
-                    <h1 class="home__title">Sumit <br> <span class="text-gradient">Computer Science Student</span></h1>
-                    <h3 class="home__typing">I build <span id="typing-text"></span><span class="cursor">|</span></h3>
-                    <p class="home__description">
-                        Passionate about solving complex problems using Data Structures and Algorithms, and creating
-                        elegant web applications.
-                    </p>
-                    <div class="home__buttons">
-                        <a href="#contact" class="btn btn-primary">Hire Me</a>
-                        <a href="Sumit_Sidharth_CV.pdf" download class="btn btn-outline">Download CV <i
-                                class='bx bx-download'></i></a>
-                    </div>
-                </div>
-
-                <div class="home__social">
-                    <a href="https://github.com/sumitsidharth" target="_blank"
-                        class="home__social-link glassmorphism"><i class='bx bxl-github'></i></a>
-                    <a href="#" target="_blank" class="home__social-link glassmorphism"><i
-                            class='bx bxl-linkedin'></i></a>
-                    <a href="#" target="_blank" class="home__social-link glassmorphism"><i
-                            class='bx bxl-twitter'></i></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section class="about section" id="about">
-            <h2 class="section__title">About <span class="text-gradient">Me</span></h2>
-            <div class="about__container container grid">
-                <div class="about__data glassmorphism reveal">
-                    <p class="about__description">
-                        I am a dedicated Computer Science student with a strong foundation in Java and Data Structures &
-                        Algorithms.
-                        My journey involves continuous learning and building scalable web applications. I thrive in
-                        challenging environments
-                        where I can apply algorithmic thinking to real-world software engineering problems.
-                    </p>
-                    <div class="about__info">
-                        <div>
-                            <span class="about__info-title">100+</span>
-                            <span class="about__info-name">DSA Problems <br> Solved</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">4+</span>
-                            <span class="about__info-name">Completed <br> Projects</span>
-                        </div>
-                        <div>
-                            <span class="about__info-title">0</span>
-                            <span class="about__info-name">Months <br> Experience</span>
-                        </div>
+            <div class="hero-image-container">
+                <div class="hexagon-frame">
+                    <div class="hexagon-inner">
+                        <img src="profile.png" alt="Sumit Sidharth" class="hero-image">
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="scroll-down">
+            <a href="#about">
+                <i class='bx bx-chevron-down scroll-arrow'></i>
+            </a>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section class="skills section" id="skills">
-            <h2 class="section__title">My <span class="text-gradient">Skills</span></h2>
-            <div class="skills__container container grid">
-
-                <!-- Programming Languages & DSA -->
-                <div class="skills__content glassmorphism reveal">
-                    <h3 class="skills__title"><i class='bx bx-code-curly'></i> Programming & DSA</h3>
-                    <div class="skills__box">
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxl-java'></i>
-                                <div>
-                                    <h3 class="skills__name">Java</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class='bx bx-data'></i>
-                                <div>
-                                    <h3 class="skills__name">DSA</h3>
-                                    <span class="skills__level">Basic</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class='bx bxl-python'></i>
-                                <div>
-                                    <h3 class="skills__name">Python</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Web Development -->
-                <div class="skills__content glassmorphism reveal">
-                    <h3 class="skills__title"><i class='bx bx-layout'></i> Web Development</h3>
-                    <div class="skills__box">
-                        <div class="skills__group">
-                            <div class="skills__data">
-                                <i class='bx bxl-html5'></i>
-                                <div>
-                                    <h3 class="skills__name">HTML</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class='bx bxl-css3'></i>
-                                <div>
-                                    <h3 class="skills__name">CSS</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class='bx bxl-javascript'></i>
-                                <div>
-                                    <h3 class="skills__name">JavaScript</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                            <div class="skills__data">
-                                <i class='bx bxl-django'></i>
-                                <div>
-                                    <h3 class="skills__name">Django</h3>
-                                    <span class="skills__level">Intermediate</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="section-title reveal">
+            <h2>About Me</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="about-container">
+            <div class="about-text reveal">
+                <p>Hello! I'm Sumit, a passionate Full-Stack Developer and a 2nd-year CSE Student at ITER, SOA University, Bhubaneswar.</p>
+                <p>I enjoy solving complex problems and turning ideas into scalable, user-friendly applications. My journey in software engineering has been fueled by a deep curiosity for how things work and a desire to build solutions that matter.</p>
+                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source, or sharpening my problem-solving skills with DSA.</p>
             </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section class="projects section" id="projects">
-            <h2 class="section__title">Recent <span class="text-gradient">Projects</span></h2>
-
-            <div class="projects__filters reveal">
-                <span class="projects__item active-filter" data-filter="all">All</span>
-                <span class="projects__item" data-filter="web">Web Dev</span>
-                <span class="projects__item" data-filter="java">Java</span>
-            </div>
-
-            <div class="projects__container container grid">
-
-                <!-- Project 1 -->
-                <article class="projects__card glassmorphism reveal mix web">
-                    <div class="projects__img-wrapper">
-                        <div class="projects__img-placeholder">
-                            <i class='bx bx-bookmark-alt'></i>
-                        </div>
-                    </div>
-                    <div class="projects__content">
-                        <h3 class="projects__title">Bookmark</h3>
-                        <p class="projects__description">A social bookmarking platform built with Django. Allows users
-                            to save, share, and manage images globally.</p>
-                        <div class="projects__tech">
-                            <span>Django</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <a href="https://github.com/sumitsidharth/Bookmark" class="projects__button">View Project <i
-                                class='bx bx-right-arrow-alt'></i></a>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="projects__card glassmorphism reveal mix java">
-                    <div class="projects__img-wrapper">
-                        <div class="projects__img-placeholder">
-                            <i class='bx bx-sort-alt-2'></i>
-                        </div>
-                    </div>
-                    <div class="projects__content">
-                        <h3 class="projects__title">E-learning</h3>
-                        <p class="projects__description">A Django project that allows users to create and enroll in
-                            online courses. Features include course management, quizzes, and progress tracking.</p>
-                        <div class="projects__tech">
-                            <span>Django</span>
-                            <span>HTML/CSS</span>
-                        </div>
-                        <a href="https://github.com/sumitsidharth/E_learning" class="projects__button">View Project <i
-                                class='bx bx-right-arrow-alt'></i></a>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="projects__card glassmorphism reveal mix web">
-                    <div class="projects__img-wrapper">
-                        <div class="projects__img-placeholder">
-                            <i class='bx bx-store-alt'></i>
-                        </div>
-                    </div>
-                    <div class="projects__content">
-                        <h3 class="projects__title">Attendance Portal</h3>
-                        <p class="projects__description">This is attendance management system that allows users to mark
-                            their attendance and
-                            manage their attendance.</p>
-                        <div class="projects__tech">
-                            <span>Django</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        <a href="https://github.com/sumitsidharth/Attendence_portal" class="projects__button">View
-                            Project <i class='bx bx-right-arrow-alt'></i></a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact section" id="contact">
-            <h2 class="section__title">Get In <span class="text-gradient">Touch</span></h2>
-            <div class="contact__container container grid">
-                <div class="contact__info glassmorphism reveal">
-                    <h3 class="contact__title">Talk to me</h3>
-                    <div class="contact__card">
-                        <i class='bx bx-mail-send contact__card-icon'></i>
-                        <h3 class="contact__card-title">Email</h3>
-                        <span class="contact__card-data">sumitsidharth30@gmail.com</span>
-                        <a href="mailto:sumitsidharth30@gmail.com" class="contact__button">Write me <i
-                                class='bx bx-right-arrow-alt'></i></a>
-                    </div>
-                    <div class="contact__card">
-                        <i class='bx bxl-linkedin-square contact__card-icon'></i>
-                        <h3 class="contact__card-title">LinkedIn</h3>
-                        <span class="contact__card-data">sumitsidharth</span>
-                        <a href="#" class="contact__button">Connect <i class='bx bx-right-arrow-alt'></i></a>
-                    </div>
+            <div class="about-stats reveal">
+                <div class="stat-card" data-tilt>
+                    <h3 class="counter" data-target="3">0</h3>
+                    <p>Projects</p>
                 </div>
-
-                <div class="contact__form-div glassmorphism reveal">
-                    <h3 class="contact__title">Send me a message</h3>
-                    <form action="" class="contact__form">
-                        <div class="contact__form-group">
-                            <div class="contact__form-box">
-                                <input type="text" placeholder="Name" class="contact__form-input" required>
-                            </div>
-                            <div class="contact__form-box">
-                                <input type="email" placeholder="Email" class="contact__form-input" required>
-                            </div>
-                        </div>
-                        <div class="contact__form-box contact__form-area">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Message"
-                                class="contact__form-input" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                <div class="stat-card" data-tilt>
+                    <h3 class="counter" data-target="2">0</h3>
+                    <p>Years Learning</p>
+                </div>
+                <div class="stat-card" data-tilt>
+                    <h3 class="counter" data-target="10">0</h3>
+                    <p>Technologies</p>
+                </div>
+                <div class="stat-card" data-tilt>
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Hours Coded</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="section-title reveal">
+            <h2>My Skills</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="skills-container reveal">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="hex-grid">
+                    <div class="hex-skill"><i class='bx bxl-java'></i><span>Java</span></div>
+                    <div class="hex-skill"><i class='bx bxl-python'></i><span>Python</span></div>
+                    <div class="hex-skill"><i class='bx bxl-javascript'></i><span>JavaScript</span></div>
+                    <div class="hex-skill"><i class='bx bxl-html5'></i><span>HTML5</span></div>
+                    <div class="hex-skill"><i class='bx bxl-css3'></i><span>CSS3</span></div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Frameworks & Tools</h3>
+                <div class="hex-grid">
+                    <div class="hex-skill"><i class='bx bxl-django'></i><span>Django</span></div>
+                    <div class="hex-skill"><i class='bx bx-brain'></i><span>DSA</span></div>
+                    <div class="hex-skill"><i class='bx bx-code-alt'></i><span>Problem Solving</span></div>
+                    <div class="hex-skill"><i class='bx bxl-git'></i><span>Git</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="section-title reveal">
+            <h2>Featured Projects</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="projects-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3 class="project-title">E-Learning Platform</h3>
+                    <p class="project-desc">A comprehensive web-based learning platform featuring interactive courses, study materials, and a seamless student interface.</p>
+                    <div class="tech-stack">
+                        <span>HTML</span><span>CSS</span><span>JS</span><span>Python</span><span>Django</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://sumitElearning.pythonanywhere.com" target="_blank" class="btn-icon"><i class='bx bx-link-external'></i> Live Demo</a>
+                        <a href="#" target="_blank" class="btn-icon"><i class='bx bxl-github'></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3 class="project-title">Bookmark Manager</h3>
+                    <p class="project-desc">A robust tool to save, organize, and manage bookmarks with user authentication, categorization, and a clean UI.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://Bookmark.pythonanywhere.com" target="_blank" class="btn-icon"><i class='bx bx-link-external'></i> Live Demo</a>
+                        <a href="#" target="_blank" class="btn-icon"><i class='bx bxl-github'></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card reveal">
+                <div class="project-content">
+                    <h3 class="project-title">Attendance Portal</h3>
+                    <p class="project-desc">A streamlined student attendance tracking system with secure login, dynamic records, and automated report generation.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Django</span><span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="btn-icon"><i class='bx bx-link-external'></i> Live Demo</a>
+                        <a href="#" target="_blank" class="btn-icon"><i class='bx bxl-github'></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education & Achievements Section -->
+    <section id="education" class="education section">
+        <div class="section-title reveal">
+            <h2>Education & Achievements</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="edu-ach-container">
+            <!-- Timeline -->
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3 class="timeline-title">B.Tech in Computer Science & Engineering</h3>
+                        <h4 class="timeline-subtitle">ITER, SOA University, Bhubaneswar</h4>
+                        <span class="timeline-date">2024 &ndash; 2028 (2nd Year)</span>
+                        <p>Focusing on foundational computing principles, data structures, algorithms, and full-stack web development.</p>
+                    </div>
+                </div>
+                <!-- Future entries can go here -->
+            </div>
+            
+            <!-- Achievements -->
+            <div class="achievements reveal">
+                <div class="achievement-card glass-card">
+                    <i class='bx bx-trophy'></i>
+                    <div class="achieve-info">
+                        <h4>Coding Milestones</h4>
+                        <p>Consistent problem solver with 500+ hours spent refining algorithms and logic.</p>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card">
+                    <i class='bx bx-medal'></i>
+                    <div class="achieve-info">
+                        <h4>Academic Excellence</h4>
+                        <p>Maintaining strong academic performance while actively pursuing independent projects.</p>
+                    </div>
+                </div>
+                <div class="achievement-card glass-card">
+                    <i class='bx bx-rocket'></i>
+                    <div class="achieve-info">
+                        <h4>Project Deployments</h4>
+                        <p>Successfully deployed multiple full-stack Django applications to production environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="section-title reveal">
+            <h2>Get In Touch</h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <h3>Let's build something together!</h3>
+                <p>Feel free to reach out for collaborations, opportunities, or just a quick chat.</p>
+                <div class="social-links">
+                    <a href="mailto:sumit@example.com" class="social-link">
+                        <i class='bx bx-envelope'></i> <span>Email Me</span>
+                    </a>
+                    <a href="https://linkedin.com/in/sumitsidharth" target="_blank" class="social-link">
+                        <i class='bx bxl-linkedin'></i> <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/sumitsidharth" target="_blank" class="social-link">
+                        <i class='bx bxl-github'></i> <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-wrapper glass-card">
+                <form id="contact-form" class="contact-form">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span>Send Message</span>
+                        <i class='bx bx-send'></i>
+                    </button>
+                    <div class="form-message" id="form-message">Message sent successfully!</div>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container container">
-            <h1 class="footer__title">Sumit.</h1>
-            <ul class="footer__list">
-                <li><a href="#about" class="footer__link">About</a></li>
-                <li><a href="#projects" class="footer__link">Projects</a></li>
-                <li><a href="#contact" class="footer__link">Contact</a></li>
-            </ul>
-            <ul class="footer__social">
-                <a href="https://github.com/sumitsidharth" target="_blank" class="footer__social-link"><i
-                        class='bx bxl-github'></i></a>
-                <a href="#" target="_blank" class="footer__social-link"><i class='bx bxl-linkedin'></i></a>
-            </ul>
-            <span class="footer__copy">&#169; <a href="https://github.com/sumitsidharth" target="_blank">Sumit
-                    Sidharth</a>. All rigths reserved.</span>
+        <div class="footer-content">
+            <p>&copy; 2026 <a href="https://github.com/sumitsidharth" target="_blank" class="footer-name">Sumit Sidharth</a>. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/sumitsidharth" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+            </div>
+            <a href="#home" class="back-to-top">
+                <i class='bx bx-up-arrow-alt'></i>
+            </a>
         </div>
     </footer>
 
-    <!-- JS -->
-    <!-- Mixitup for project filtering -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- External Script -->
+    <script src="script.js"></script>
 </body>
-
 </html>
